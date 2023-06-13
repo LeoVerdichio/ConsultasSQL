@@ -14,11 +14,7 @@ on cliente.id_cliente = venta.id_cliente)
 group by venta.id_cliente
 order by venta.id_cliente;
 
-/* 3) Cantidad de ventas por producto*/
-select nombre, sum(cantidad) from (venta left join producto
-on venta.codigo_producto = producto.codigo)
-group by codigo_producto
-order by sum(cantidad) desc;
+
 
 /* 4) Cantidad de productos comprados por cliente en el mes actual. */
 select cliente.nombre, fecha, sum(cantidad) as cantidad from (venta 
